@@ -1,0 +1,23 @@
+{{block input(name, placeholder="",pattern=".*", type="text", hint="", min=0, max=999)}}
+  <div>
+    <label class="sr-only" for="{{name}}">
+        {{name}}
+    </label>
+    <input
+    class="flex h-10 w-full rounded-md border border-border bg-background-muted px-3 py-2 text-sm ring-offset-background  placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+    id="{{name}}"
+    minlength={{min}} 
+    maxlength={{max}}
+    pattern="{{pattern}}"
+    name="{{name}}"
+    placeholder="{{placeholder}}"
+    type="{{type}}"
+    required
+    />
+    {{if hint}}
+    <p class="text-xs px-2 py-1 pb-2 font-normal text-foreground-muted">
+        {{hint}}
+    <p>
+    {{end}}
+</div>
+{{end}}

@@ -1,0 +1,52 @@
+{{extends "../../layouts/main"}}
+{{import "../../components/primitives/button"}}
+{{import "../../components/primitives/logo"}}
+{{import "../../components/primitives/input"}}
+{{import "../../components/primitives/button"}}
+
+
+{{block documentBody()}}
+    
+
+
+<div class="min-h-screen  bg-neutral-100 px-4 py-8 flex flex-col items-center justify-center">
+  <div class="max-w-md w-full space-y-8">
+      <div class="flex w-full sm:justify-center">
+        {{yield logo()}}
+      </div>
+      <div class="sm:text-center">
+        <h1 class=" text-lg font-semibold">Sign up for Mingley</h1>
+        <p class="text-sm">
+          Enter the required details to continue
+        </p>
+      </div>
+    <form hx-post="" hx-ext="disable-element" hx-disable-element="button, input .dia" hx-indicator="#submit-form-button-loading-indicator" class="mt-8 space-y-6">
+      <div class="rounded-md space-y-1">
+          {{yield input(name="email", placeholder="Email address", type="email")}}
+          {{yield input(name="username", placeholder="Choose a username", pattern="[A-Za-z0-9-]", type="text", min=3, max=20, hint="Must be at least 3 characters and contain only letters, numbers, or the hyphen (-) character.")}}
+          {{yield input(name="password", min=8,max=60, placeholder="Password", type="password", hint="Your password must be at least 8 characters. Other than that, go wild :)")}}
+      </div>
+      {{if auth == "sign-in"}}
+        <div class="flex items-center justify-end">
+            <a class="text-sm font-medium" href="#">
+              Forgot your password?
+            </a>
+        </div>
+      {{end}}
+      <div>
+        {{yield button(title="Continue", name="submit-form-button")}}
+      </div>
+    </form>
+    <div disabled class="disabled:opacity-60 dia flex justify-center">
+      <p class="text-sm text-gray-600">
+        Don't have an account?
+        <a class="font-medium text-primary-600" href="#">
+          Sign up now
+        </a>
+      </p>
+    </div>
+  </div>
+</div>  
+
+
+{{end}}  

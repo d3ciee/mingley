@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>{{ isset(title) ? title : "" }}</title>
+    <script src="https://unpkg.com/htmx.org@1.6.0/dist/htmx.min.js"></script>
+    <script src="https://unpkg.com/htmx.org@1.9.11/dist/ext/disable-element.js"></script>
+    <link href="/public/css/tailwind.css" rel="stylesheet"/>
+    <link href="/public/css/global.css" rel="stylesheet"/>
+
+</head>
+<body class="bg-background text-foreground" id="wrapper">
+        {{block documentBody()}}{{end}}
+        <script src="https://unpkg.com/lucide@latest"></script>
+        <script>
+            lucide.createIcons();
+        </script>
+</body>
+</html>

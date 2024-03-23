@@ -1,0 +1,4 @@
+{{block logo()}}
+  <div class="h-10 w-10 rounded-md bg-primary-600">
+  </div>
+{{end}}

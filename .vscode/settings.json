@@ -1,4 +1,7 @@
 {
+    "tailwindCSS.includeLanguages": {
+        "jet": "html"
+      },
     "sqltools.useNodeRuntime": true,
     "sqltools.connections": [
         {
@@ -7,5 +10,8 @@
             "name": "mingley",
             "database": "${workspaceFolder:mingley}/.data/local.sqlite"
         }
-    ]
+    ],
+    "files.associations": {
+        ".jet":"html"
+    }
 }

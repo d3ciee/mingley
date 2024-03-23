@@ -1,0 +1,13 @@
+{{block button(title,name, type="submit")}}
+ <button type="{{type}}" id="{{name}}"" class="shadow-sm items-center whitespace-nowrap ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-[#6f5e5b] hover:bg-[#6f5e5b]">
+  <div id="{{name}}-loading-indicator" class="opacity-0 absolute top-[50%] -translate-y-[50%] right-4 ">
+    <i class="w-4 h-4 animate-spin duration-150 text-white" data-lucide="loader-circle"></i>
+  </div>
+  {{title}}
+ </button>
+ <style>
+  .htmx-request#{{name}}-loading-indicator{
+    opacity:1;
+  }
+ </style>
+{{end}}
